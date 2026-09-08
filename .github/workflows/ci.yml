@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    # Not just main. Stacked PRs target the branch below them in the stack,
+    # and a filter of [main] silently gives every layer but the bottom one
+    # zero checks — which looks identical to a passing PR.
+    branches: [main, "claude/**"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # No build or test job yet: this repo is a placeholder and has no code.
+  # The secret scan is worth running from day one regardless — it costs
+  # nothing on an empty tree and is already correct when code arrives.
+  secrets:
+    uses: shamwari-ai/.github/.github/workflows/reusable-gitleaks.yml@main
