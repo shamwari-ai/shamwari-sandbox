@@ -38,3 +38,5 @@ review against rule 1 even when it looks like a refactor.
 
 This repository rebase-merges. Every commit on a branch lands on `main`
 individually, so commit messages are part of the permanent record.
+
+Commits are signed; rebase preserves signature verification.
