@@ -33,3 +33,8 @@ review against rule 1 even when it looks like a refactor.
 - [`shamwari`](https://github.com/shamwari-ai/shamwari) — umbrella: architecture, migration log, repo index
 - [`shamwari-gateway`](https://github.com/shamwari-ai/shamwari-gateway) — routes to this host
 - Org standards: [ORG_STANDARDS.md](https://github.com/shamwari-ai/.github/blob/main/ORG_STANDARDS.md)
+
+## Merge convention
+
+This repository rebase-merges. Every commit on a branch lands on `main`
+individually, so commit messages are part of the permanent record.
