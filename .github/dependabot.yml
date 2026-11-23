@@ -1,10 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    target-branch: "staging"
     directory: "/"
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "ci"
