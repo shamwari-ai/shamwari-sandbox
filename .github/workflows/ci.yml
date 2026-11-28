@@ -13,6 +13,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   # No build or test job yet: this repo is a placeholder and has no code.
   # The secret scan is worth running from day one regardless — it costs
